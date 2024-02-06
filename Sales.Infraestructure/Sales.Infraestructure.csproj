@@ -7,10 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Core\" />
-    <Folder Include="Dao\" />
-    <Folder Include="Exceptions\" />
-    <Folder Include="Interfaces\" />
+    <ProjectReference Include="..\Sales.Domain\Sales.Domain.csproj" />
   </ItemGroup>
 
 </Project>
