@@ -1,29 +1,16 @@
 ﻿using Sales.Domain.Entities;
+using Sales.Infraestructure.Context;
 using Sales.Infraestructure.Core;
 using Sales.Infraestructure.Interfaces;
 
 namespace Sales.Infraestructure.Dao
 {
-    public class CategoriaDb : ICategoriaDb
+    public class CategoriaDb : DaoBase<Categoria>, ICategoriaDb
     {
-        public bool Exists(string name)
+        private readonly SalesContext context;
+        public CategoriaDb(SalesContext context) : base(context)
         {
-            throw new NotImplementedException();
-        }
-
-        public List<Categoria> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Categoria GetById(int entityId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public DataResult Save(Categoria entity)
-        {
-            throw new NotImplementedException();
+            this.context = context;
         }
     }
 }

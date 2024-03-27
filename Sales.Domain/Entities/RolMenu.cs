@@ -1,9 +1,8 @@
-﻿
+﻿using Sales.Domain.Core;
 namespace Sales.Domain.Entities
 {
-    public class RolMenu : Core.BaseEntity
+    public class RolMenu : BaseEntity
     {
-        public int RolMenuId { get; set; }
         public int? IdRol { get; set; }
         public int? IdMenu { get; set; }
     }

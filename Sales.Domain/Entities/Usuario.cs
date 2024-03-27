@@ -1,9 +1,8 @@
-﻿
+﻿using Sales.Domain.Core;
 namespace Sales.Domain.Entities
 {
-    public class Usuario : Core.BaseEntity
+    public class Usuario : BaseEntity
     {
-        public int UsuarioId { get; set; }
         public string? Nombre { get; set; }
         public string? Correo { get; set; }
         public string? Telefono { get; set; }
@@ -11,6 +10,5 @@ namespace Sales.Domain.Entities
         public string? UrlFoto { get; set; }
         public string? NombreFoto { get; set; }
         public string? Clave { get; set; }
-        public List<Venta> Ventas { get; set; } = new List<Venta>();
     }
 }

@@ -1,9 +1,8 @@
-﻿
+﻿using Sales.Domain.Core;
 namespace Sales.Domain.Entities
 {
-    public class Negocio : Core.BaseEntity
+    public class Negocio : BaseEntity
     {
-        public int NegocioId { get; set; }
         public string? UrlLogo { get; set; }
         public string? NombreLogo { get; set; }
         public string? NumeroDocumento { get; set; }

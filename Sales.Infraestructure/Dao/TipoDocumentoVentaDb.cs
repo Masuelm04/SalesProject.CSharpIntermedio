@@ -1,29 +1,16 @@
 ﻿using Sales.Domain.Entities;
+using Sales.Infraestructure.Context;
 using Sales.Infraestructure.Core;
 using Sales.Infraestructure.Interfaces;
 
 namespace Sales.Infraestructure.Dao
 {
-    public class TipoDocumentoVentaDb : ITipoDocumentoVentaDb
+    public class TipoDocumentoVentaDb : DaoBase<TipoDocumentoVenta>, ITipoDocumentoVentaDb
     {
-        public bool Exists(string name)
+        private readonly SalesContext context;
+        public TipoDocumentoVentaDb(SalesContext context) : base(context)
         {
-            throw new NotImplementedException();
-        }
-
-        public List<TipoDocumentoVenta> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public TipoDocumentoVenta GetById(int entityId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public DataResult Save(TipoDocumentoVenta entity)
-        {
-            throw new NotImplementedException();
+            this.context = context;
         }
     }
 }

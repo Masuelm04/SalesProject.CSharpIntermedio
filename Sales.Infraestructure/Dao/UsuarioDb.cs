@@ -1,29 +1,16 @@
 ﻿using Sales.Domain.Entities;
+using Sales.Infraestructure.Context;
 using Sales.Infraestructure.Core;
 using Sales.Infraestructure.Interfaces;
 
 namespace Sales.Infraestructure.Dao
 {
-    public class UsuarioDb : IUsuarioDb
+    public class UsuarioDb : DaoBase<Usuario>, IUsuarioDb
     {
-        public bool Exists(string name)
+        private readonly SalesContext context;
+        public UsuarioDb(SalesContext context) : base(context)
         {
-            throw new NotImplementedException();
-        }
-
-        public List<Usuario> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Usuario GetById(int entityId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public DataResult Save(Usuario entity)
-        {
-            throw new NotImplementedException();
+            this.context = context;
         }
     }
 }

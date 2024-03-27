@@ -1,12 +1,13 @@
-﻿using Sales.Domain.Core;
-
-namespace Sales.Infraestructure.Core
+﻿namespace Sales.Infraestructure.Core
 {
-    public interface IDaoBase<TEntity> where TEntity : BaseEntity
+    public interface IDaoBase<TEntity> where TEntity : class
     {
-        DataResult Save(TEntity entity);
-        List<TEntity> GetAll();
-        TEntity GetById(int entityId);
-        bool Exists(string name);
+        Task<DataResult> Save(TEntity entity);
+        Task<DataResult> Update(TEntity entity);
+        Task<List<TEntity>> GetAll();
+        Task<List<TEntity>> GetEntitiesWithFilters(Func<TEntity, bool> filter);
+        Task<TEntity> GetById(int Id);
+        bool Exists(Func<TEntity, bool> filter);
+        Task<int> Commit();
     }
 }

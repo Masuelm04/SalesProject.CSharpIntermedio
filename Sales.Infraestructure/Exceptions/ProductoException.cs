@@ -9,7 +9,7 @@ namespace Sales.Infraestructure.Exceptions
         }
         void SaveError(string message)
         {
-
+            Console.WriteLine(message);
         }
     }
 }

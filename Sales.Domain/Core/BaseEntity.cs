@@ -8,6 +8,7 @@ namespace Sales.Domain.Core
             this.FechaRegistro = DateTime.Now;
             this.Eliminado = false;
         }
+        public int Id { get; set; }
         public bool? EsActivo { get; set; }
         public DateTime FechaRegistro { get; set; }
         public int IdUsuarioCreacion { get; set; }

@@ -1,9 +1,8 @@
-﻿
+﻿using Sales.Domain.Core;
 namespace Sales.Domain.Entities
 {
-    public class Venta : Core.BaseEntity
+    public class Venta : BaseEntity
     {
-        public int VentaId { get; set; }
         public string? NumeroVenta { get; set; }
         public int? IdTipoDocumentoVenta { get; set; }
         public int? IdUsuario { get; set; }
@@ -12,6 +11,5 @@ namespace Sales.Domain.Entities
         public decimal? SubTotal { get; set; }
         public decimal? ImpuestoTotal { get; set; }
         public decimal? Total { get; set; }
-        public List<DetalleVenta> DetalleVentas { get; set; } = new List<DetalleVenta>();
     }
 }

@@ -1,29 +1,16 @@
 ﻿using Sales.Domain.Entities;
+using Sales.Infraestructure.Context;
 using Sales.Infraestructure.Core;
 using Sales.Infraestructure.Interfaces;
 
 namespace Sales.Infraestructure.Dao
 {
-    public class ProductoDb : IProductoDb
+    public class ProductoDb : DaoBase<Producto>, IProductoDb
     {
-        public bool Exists(string name)
+        private readonly SalesContext context;
+        public ProductoDb(SalesContext context) : base(context)
         {
-            throw new NotImplementedException();
-        }
-
-        public List<Producto> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Producto GetById(int entityId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public DataResult Save(Producto entity)
-        {
-            throw new NotImplementedException();
+            this.context = context;
         }
     }
 }
